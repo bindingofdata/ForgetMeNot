@@ -1,30 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
 	x:Class="ForgetMeNot.MainPage"
-	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-	xmlns="http://schemas.microsoft.com/dotnet/2021/maui">
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
 	<ScrollView>
 		<VerticalStackLayout>
 			<Label
 				x:Name="HelloLabel"
+				Margin="20"
+				Padding="10"
 				BackgroundColor="Red"
 				FontAttributes="Bold"
 				FontSize="Small"
 				HorizontalOptions="Center"
 				HorizontalTextAlignment="Center"
 				LineBreakMode="WordWrap"
-				Margin="20"
 				MaxLines="5"
-				Padding="10"
 				Text="{Binding FullName}"
 				TextColor="Yellow"
 				VerticalTextAlignment="Center" />
 
 			<Image
+				x:Name="MOI_Logo"
 				HeightRequest="200"
 				HorizontalOptions="Center"
-				Source="ministry_of_information.jpg" />
+				IsVisible="{Binding ImageIsVisible}"
+				Source="{Binding SelectedImage}">
+				<Image.GestureRecognizers>
+					<TapGestureRecognizer Command="{Binding ImageTappedCommand}" NumberOfTapsRequired="2" />
+				</Image.GestureRecognizers>
+			</Image>
+
+			<Button
+				Margin="0,5,0,0"
+				Padding="5"
+				BackgroundColor="Red"
+				BorderColor="Black"
+				BorderWidth="2"
+				Command="{Binding ToggleImageVisibilityCommand}"
+				CornerRadius="20"
+				FontSize="Small"
+				HeightRequest="35"
+				Text="Click me"
+				TextColor="Yellow"
+				WidthRequest="150" />
+
+			<ImageButton
+				Margin="0,5,0,0"
+				Padding="5"
+				BackgroundColor="Red"
+				BorderColor="Black"
+				BorderWidth="2"
+				Command="{Binding ToggleImageVisibilityCommand}"
+				CornerRadius="20"
+				HeightRequest="35"
+				Source="{Binding SelectedImage}"
+				WidthRequest="150" />
 		</VerticalStackLayout>
 	</ScrollView>
 
