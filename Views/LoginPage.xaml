@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="ForgetMeNot.Views.LoginPage"
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	Title="Login Page">
+	<VerticalStackLayout>
+		<!--  User name  -->
+		<HorizontalStackLayout WidthRequest="300">
+			<Label
+				Margin="10,20,10,0"
+				FontSize="Medium"
+				HorizontalOptions="Start"
+				Text="User Name"
+				VerticalOptions="Center"
+				VerticalTextAlignment="Center" />
+
+			<Entry
+				HorizontalOptions="End"
+				IsTextPredictionEnabled="False"
+				Placeholder="User Name"
+				Text="{Binding Name}"
+				WidthRequest="150" />
+		</HorizontalStackLayout>
+
+		<!--  Password  -->
+		<HorizontalStackLayout WidthRequest="300">
+			<Label
+				Margin="10,20,10,0"
+				FontSize="Medium"
+				HorizontalOptions="Start"
+				Text="Password"
+				VerticalOptions="Center"
+				VerticalTextAlignment="Center" />
+
+			<Entry
+				HorizontalOptions="End"
+				IsPassword="True"
+				IsTextPredictionEnabled="False"
+				Placeholder="Password"
+				Text="{Binding Password}"
+				WidthRequest="150" />
+		</HorizontalStackLayout>
+
+		<!--  Buttons  -->
+		<HorizontalStackLayout Margin="10,10,10,0">
+			<Button
+				Margin="5"
+				BackgroundColor="Gray"
+				Command="{Binding SubmitCommand}"
+				Text="Submit" />
+
+			<Button
+				Margin="5"
+				BackgroundColor="Gray"
+				Text="Create Account" />
+
+			<Button
+				Margin="5"
+				BackgroundColor="Gray"
+				Text="Forgot Password" />
+
+		</HorizontalStackLayout>
+
+		<Editor
+			x:Name="LoginEditor"
+			Margin="10"
+			FontSize="Small"
+			HeightRequest="300"
+			IsTextPredictionEnabled="True"
+			MaxLength="500"
+			Placeholder="Placeholder can be up to 500 characters!"
+			PlaceholderColor="Red"
+			Text="{Binding LostPasswordExcuse}"
+			TextColor="DodgerBlue"
+			VerticalTextAlignment="Center" />
+	</VerticalStackLayout>
+</ContentPage>

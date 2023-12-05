@@ -9,8 +9,7 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace ForgetMeNot.ViewModels
 {
-    [ObservableObject]
-    public partial class MainVM
+    public partial class MainVM : ObservableObject
     {
         [ObservableProperty]
         private bool imageIsVisible = true;
